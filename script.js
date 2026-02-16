@@ -47,8 +47,8 @@ playMusic.forEach((element) => {
         play.classList.remove('fa-circle-play');
         play.classList.add('fa-circle-pause');
 
+        let index = parseInt(e.target.id);
         currentSong = index;
-        index = parseInt(e.target.id);
         audio.src = `Audio/${index}.flac`;
         audio.currentTime=0;
         audio.play();
@@ -152,4 +152,7 @@ audio.addEventListener('ended', () => {
 backward.addEventListener('click', () => {
     playPrevSong();
 })
+
+// Initialize now bar with first song data on page load
+updateNowBar();
 
