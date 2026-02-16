@@ -56,8 +56,8 @@ playMusic.forEach((element) => {
 })
 
 playNextSong = () => {
-    let nexSong = (currentSong + 1) % playMusic.length;
-    currentSong = nexSong == 0 ?18 : nexSong;
+    let nextSong = (currentSong + 1) % playMusic.length;
+    currentSong = nextSong == 0 ?18 : nextSong;
     audio.src = `Audio/${currentSong}.flac`;
     audio.currentTime=0;
     audio.play();
