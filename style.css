@@ -53,7 +53,7 @@ nav {
 }
 .search-bar:hover {
   background-color: #272727;
-  border: 1px solid rgb(76, 76, 76, 76);
+  border: 1px solid rgb(76, 76, 76);
 }
 
 .search-icon {
@@ -76,7 +76,7 @@ nav {
 }
 
 .browse {
-  font: 1.3rem;
+  font-size: 1.3rem;
   margin-left: 0.6rem;
   transition: 0.2s;
 }
@@ -152,10 +152,11 @@ nav {
 }
 
 .main-right-part {
-  height: 100%;
   width: 72%;
+  height: 100%;
   background-color: #121212;
   border-radius: 10px;
+  overflow: auto;
 }
 
 .library {
@@ -198,7 +199,7 @@ nav {
 
 .box h4 {
   font-weight: 600;
-  font: 0.9rem;
+  font-size: 0.9rem;
   padding: 1.3rem 0 0.5rem 1rem;
 }
 .box p {
@@ -215,5 +216,139 @@ nav {
 }
 .box button:hover {
   transform: scale(1.04);
-  background-color: rgb(238, 238, 238, 238);
+  background-color: rgb(238, 238, 238);
+}
+
+/* Main: Right Part */
+
+.music-card img {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.music-card {
+  width: 10rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  position: relative;
+}
+.music-card:hover {
+  background-color: #222;
+}
+
+.music-section {
+  margin: 2rem 0 2rem 2rem;
+}
+
+.songs {
+  margin: 2rem 0;
+  display: flex;
+  overflow-x: auto;
+}
+
+.img-title {
+  margin: 0.7rem 0;
+}
+
+.img-description {
+  font-size: 0.8rem;
+  color: rgb(199, 199, 199);
+}
+
+.music-play-btn {
+  color: rgb(32, 234, 32);
+  font-size: 2.7rem;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 2.7rem;
+  display: flex;
+  border-radius: 20rem;
+  transform: translate(110px, -40px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.music-card:hover .music-play-btn {
+  opacity: 1;
+  transform: translate(110px, -50px);
+}
+
+/* PLAYER */
+
+.player-bar {
+  width: 100%;
+  height: 5rem;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.music-controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+}
+
+.player-btns {
+  font-size: 1.1rem;
+  margin: 0.4rem 1rem;
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}
+.player-btns:hover {
+  transform: scale(1.02);
+  color: rgb(232, 232, 232);
+}
+
+#play {
+  font-size: 2.3rem;
+  color: white;
+}
+
+#progressBar {
+  width: 600px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.now-bar {
+  color: white;
+  display: flex;
+}
+
+.player-bar img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 10px;
+  padding: 0.3rem;
+}
+
+.img-title-info {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+.img-des-info {
+  font-size: 0.8rem;
+  color: rgb(192, 192, 192);
+  margin-left: 1rem;
 }
