@@ -3,6 +3,32 @@
   margin: 0;
 }
 
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(29, 185, 84, 0);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #1ed760;
+}
+
+
+.main-right-part:hover::-webkit-scrollbar-thumb,
+.songs:hover::-webkit-scrollbar-thumb {
+  background: #1db954;
+}
+
 body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
@@ -139,6 +165,7 @@ nav {
   min-width: 98vw;
   height: 78vh;
   margin-top: 2vh;
+  margin-bottom: 5.5rem;
   display: flex;
   justify-content: space-around;
   color: white;
@@ -157,6 +184,7 @@ nav {
   background-color: #121212;
   border-radius: 10px;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .library {
@@ -247,6 +275,8 @@ nav {
   margin: 2rem 0;
   display: flex;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
 }
 
 .img-title {
@@ -279,18 +309,29 @@ nav {
 /* PLAYER */
 
 .player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 5rem;
-  margin-top: 0.2rem;
+  background-color: #121212;
+  border-top: 1px solid #282828;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem 1rem;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .music-controller {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  width: 100%;
 }
 
 .player {
@@ -315,40 +356,61 @@ nav {
 }
 
 #progressBar {
-  width: 600px;
-  height: 3px;
-  background-color: #333;
+  width: 500px;
+  height: 4px;
+  background-color: #404040;
   border-radius: 5px;
   cursor: pointer;
   appearance: none;
+  margin: 0.5rem 0;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .now-bar {
   color: white;
   display: flex;
+  align-items: center;
+  flex: 0 0 300px;
 }
 
 .player-bar img {
   height: 4rem;
   width: 4rem;
-  border-radius: 10px;
-  padding: 0.3rem;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .img-title-info {
   font-size: 0.9rem;
   margin-left: 1rem;
+  font-weight: 500;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .img-des-info {
-  font-size: 0.8rem;
-  color: rgb(192, 192, 192);
+  font-size: 0.75rem;
+  color: #b3b3b3;
   margin-left: 1rem;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.active {
+  color: rgb(0, 255, 0);
+}
+.active:hover {
+  color: rgb(0, 255, 0);
 }
